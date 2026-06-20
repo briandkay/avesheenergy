@@ -1,0 +1,136 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+# Allow editorial workflow (draft / review / publish)
+publish_mode: editorial_workflow
+
+collections:
+
+  # ── SITE SETTINGS ─────────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    files:
+
+      - name: "general"
+        label: "General Info"
+        file: "_data/general.json"
+        fields:
+          - { label: "Company Name",    name: "company_name",  widget: "string", default: "Aveshe Energy Services" }
+          - { label: "Tagline",         name: "tagline",       widget: "string", default: "Powering Namibia's Future" }
+          - { label: "Phone (Windhoek)",name: "phone_windhoek",widget: "string", default: "+264 61 227 036" }
+          - { label: "Phone (Lüderitz)",name: "phone_luderitz",widget: "string", default: "+264 81 622 8876" }
+          - { label: "Email (Enquiries)",name: "email_enquiries",widget: "string",default: "klaudiakay@aveshe.com" }
+          - { label: "Email (Bookings)", name: "email_bookings", widget: "string",default: "davan@aveshe.com" }
+          - { label: "Address (Windhoek)",name: "address_windhoek",widget: "string",default: "Dr. Theo Ben Gurirab Street, Luxury Hill, Klein Windhoek" }
+
+  # ── HERO SECTION ───────────────────────────────────────────────
+      - name: "hero"
+        label: "Hero Section"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Headline Line 1", name: "headline_1", widget: "string", default: "Your local" }
+          - { label: "Headline Line 2 (gold)", name: "headline_2", widget: "string", default: "energy partner." }
+          - { label: "Headline Line 3", name: "headline_3", widget: "string", default: "Globally aligned." }
+          - { label: "Sub-text", name: "subtext", widget: "text", default: "Aveshe Energy Services delivers reliable procurement and support solutions to the energy industry across Namibia and beyond." }
+          - { label: "Primary Button Text", name: "btn_primary", widget: "string", default: "Explore Our Services" }
+          - { label: "Secondary Button Text", name: "btn_secondary", widget: "string", default: "Get in Touch" }
+          - { label: "Badge Text", name: "badge", widget: "text", default: "LOCAL PRESENCE. INTERNATIONAL STANDARDS." }
+
+  # ── STATS ──────────────────────────────────────────────────────
+      - name: "stats"
+        label: "Stats Bar"
+        file: "_data/stats.json"
+        fields:
+          - label: "Trust Label"
+            name: "trust_label"
+            widget: "string"
+            default: "Energy companies that build, power and progress."
+          - label: "Stats"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Label",  name: "label",  widget: "string" }
+
+  # ── SERVICES ───────────────────────────────────────────────────
+      - name: "services"
+        label: "Services Section"
+        file: "_data/services.json"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "End-to-end solutions. Proven delivery." }
+          - { label: "Section Description", name: "description", widget: "text" }
+          - label: "Service Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Number",      name: "number",      widget: "string" }
+              - { label: "Title",       name: "title",       widget: "string" }
+              - { label: "Description", name: "description", widget: "text"   }
+              - { label: "Image",       name: "image",       widget: "image", required: false }
+
+  # ── WHY US ─────────────────────────────────────────────────────
+      - name: "why"
+        label: "Why Partner With Us"
+        file: "_data/why.json"
+        fields:
+          - { label: "Heading Line 1", name: "heading_1", widget: "string", default: "Local insight." }
+          - { label: "Heading Line 2", name: "heading_2", widget: "string", default: "Global capability." }
+          - { label: "Description",    name: "description", widget: "text" }
+          - label: "Pillars"
+            name: "pillars"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon",        widget: "string" }
+              - { label: "Title",        name: "title",       widget: "string" }
+              - { label: "Description",  name: "description", widget: "text"   }
+
+  # ── ACCOMMODATION ──────────────────────────────────────────────
+      - name: "accommodation"
+        label: "Accommodation Section"
+        file: "_data/accommodation.json"
+        fields:
+          - { label: "Heading",      name: "heading",     widget: "string", default: "Suite 10 — Klein Windhoek" }
+          - { label: "Description",  name: "description", widget: "text" }
+          - { label: "Booking Phone",name: "phone",       widget: "string", default: "+264 81 622 8876" }
+          - { label: "Booking Email",name: "email",       widget: "string", default: "davan@aveshe.com" }
+          - { label: "Gallery Link", name: "gallery_url", widget: "string", default: "https://bit.ly/4qQ1Vri" }
+          - label: "Feature Cards"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Title",       name: "title",       widget: "string" }
+              - { label: "Description", name: "description", widget: "text"   }
+
+  # ── LÜDERITZ ───────────────────────────────────────────────────
+      - name: "luderitz"
+        label: "Lüderitz Land Section"
+        file: "_data/luderitz.json"
+        fields:
+          - { label: "Heading",         name: "heading",     widget: "string", default: "Erf 96 — Lüderitz" }
+          - { label: "Size Label",      name: "size",        widget: "string", default: "18,000 m² Available for Lease" }
+          - { label: "Description",     name: "description", widget: "text" }
+          - { label: "Highlight Title", name: "highlight_title", widget: "string", default: "Location Advantage" }
+          - { label: "Highlight Text",  name: "highlight_text",  widget: "text" }
+          - label: "Badges"
+            name: "badges"
+            widget: "list"
+            fields:
+              - { label: "Badge Text", name: "text", widget: "string" }
+          - label: "Checklist Items"
+            name: "checklist"
+            widget: "list"
+            fields:
+              - { label: "Item", name: "text", widget: "string" }
+
+  # ── CONTACT ────────────────────────────────────────────────────
+      - name: "contact"
+        label: "Contact Section"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Heading Line 1", name: "heading_1", widget: "string", default: "Let's power" }
+          - { label: "Heading Line 2", name: "heading_2", widget: "string", default: "what's next." }
+          - { label: "Description",    name: "description", widget: "text" }

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Aveshe Energy — Website Setup Instructions</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 24px; color: #222; line-height: 1.7; }
+  h1 { color: #6a1f1f; border-bottom: 3px solid #c9a84c; padding-bottom: 12px; }
+  h2 { color: #6a1f1f; margin-top: 40px; }
+  h3 { color: #8b2e2e; margin-top: 24px; }
+  .step { background: #f9f5ee; border-left: 4px solid #c9a84c; padding: 16px 20px; margin: 16px 0; border-radius: 4px; }
+  .step strong { color: #6a1f1f; }
+  code { background: #eee; padding: 2px 7px; border-radius: 3px; font-size: 0.9em; font-family: monospace; }
+  .note { background: #fff8e1; border-left: 4px solid #f0c040; padding: 12px 16px; margin: 12px 0; border-radius: 4px; }
+  .done { color: #27ae60; font-weight: bold; }
+  ul li { margin-bottom: 6px; }
+  .url { color: #1a0dab; font-weight: bold; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  td, th { border: 1px solid #ddd; padding: 10px 14px; text-align: left; }
+  th { background: #6a1f1f; color: white; }
+  tr:nth-child(even) { background: #f9f5ee; }
+</style>
+</head>
+<body>
+
+<h1>🌐 Aveshe Energy Website — Setup Instructions</h1>
+<p>This guide sets up your website so your client can edit content (text, phone numbers, services, etc.) through a simple browser dashboard — no coding needed. Everything is <strong>100% free</strong> and you keep full ownership.</p>
+
+<div class="note">⏱ <strong>Total time:</strong> About 30–45 minutes. You only do this once.</div>
+
+<hr/>
+
+<h2>📁 What's in Your Downloaded ZIP</h2>
+<table>
+  <tr><th>File / Folder</th><th>What it does</th></tr>
+  <tr><td><code>index.html</code></td><td>Your main website</td></tr>
+  <tr><td><code>admin/index.html</code></td><td>The editor login page for your client</td></tr>
+  <tr><td><code>admin/config.yml</code></td><td>Defines all editable fields (don't edit this)</td></tr>
+  <tr><td><code>_data/*.json</code></td><td>The actual content your client will edit</td></tr>
+  <tr><td><code>images/</code></td><td>Upload images here</td></tr>
+  <tr><td><code>netlify.toml</code></td><td>Netlify configuration (don't edit this)</td></tr>
+  <tr><td><code>SETUP-INSTRUCTIONS.html</code></td><td>This file</td></tr>
+</table>
+
+<hr/>
+
+<h2>STEP 1 — Create a Free GitHub Account</h2>
+<p>GitHub stores your website files for free. Netlify and the CMS both connect to it.</p>
+
+<div class="step">
+  <strong>1.</strong> Go to <span class="url">https://github.com</span> and click <strong>Sign up</strong><br/>
+  <strong>2.</strong> Choose a username (e.g. <code>aveshe-energy</code>), enter email and password<br/>
+  <strong>3.</strong> Verify your email address<br/>
+  <strong>4.</strong> Click <strong>New repository</strong> (green button or + icon top right)<br/>
+  <strong>5.</strong> Name it: <code>aveshe-website</code><br/>
+  <strong>6.</strong> Set to <strong>Public</strong><br/>
+  <strong>7.</strong> Tick <strong>"Add a README file"</strong><br/>
+  <strong>8.</strong> Click <strong>Create repository</strong>
+</div>
+
+<h3>Upload your files to GitHub</h3>
+<div class="step">
+  <strong>1.</strong> Inside your new repository, click <strong>Add file → Upload files</strong><br/>
+  <strong>2.</strong> Drag and drop ALL the files and folders from your ZIP into the upload area<br/>
+  &nbsp;&nbsp;&nbsp;(Make sure <code>admin/</code>, <code>_data/</code>, <code>images/</code> folders are included)<br/>
+  <strong>3.</strong> Scroll down and click <strong>Commit changes</strong><br/>
+  <strong>4.</strong> ✅ Your files are now on GitHub
+</div>
+
+<div class="note">💡 If drag-and-drop doesn't upload folders, use GitHub Desktop app (free) — download from <strong>desktop.github.com</strong></div>
+
+<hr/>
+
+<h2>STEP 2 — Deploy on Netlify (Free Hosting)</h2>
+
+<div class="step">
+  <strong>1.</strong> Go to <span class="url">https://netlify.com</span> and click <strong>Sign up</strong><br/>
+  <strong>2.</strong> Choose <strong>"Sign up with GitHub"</strong> — this links them together<br/>
+  <strong>3.</strong> Once logged in, click <strong>Add new site → Import an existing project</strong><br/>
+  <strong>4.</strong> Click <strong>GitHub</strong><br/>
+  <strong>5.</strong> Select your <code>aveshe-website</code> repository<br/>
+  <strong>6.</strong> Leave all settings as default<br/>
+  <strong>7.</strong> Click <strong>Deploy site</strong><br/>
+  <strong>8.</strong> Wait 1–2 minutes — Netlify gives you a URL like <code>aveshe-energy.netlify.app</code><br/>
+  <strong>9.</strong> ✅ Your website is now live!
+</div>
+
+<h3>Set a custom site name (optional)</h3>
+<div class="step">
+  In Netlify: <strong>Site configuration → Site details → Change site name</strong><br/>
+  Change it to something like <code>aveshe-energy</code> so the URL is <code>aveshe-energy.netlify.app</code>
+</div>
+
+<hr/>
+
+<h2>STEP 3 — Enable the CMS Editor (Decap CMS)</h2>
+<p>This gives your client their login dashboard at <code>yoursite.netlify.app/admin</code></p>
+
+<h3>3a — Enable Netlify Identity</h3>
+<div class="step">
+  <strong>1.</strong> In Netlify dashboard, go to <strong>Site configuration → Identity</strong><br/>
+  <strong>2.</strong> Click <strong>Enable Identity</strong><br/>
+  <strong>3.</strong> Scroll to <strong>Registration preferences</strong> → set to <strong>"Invite only"</strong><br/>
+  &nbsp;&nbsp;&nbsp;(So only people YOU invite can log in — your client can't be accessed by strangers)<br/>
+  <strong>4.</strong> Scroll to <strong>Git Gateway</strong> → click <strong>Enable Git Gateway</strong><br/>
+  <strong>5.</strong> ✅ Identity is now enabled
+</div>
+
+<h3>3b — Invite Your Client</h3>
+<div class="step">
+  <strong>1.</strong> Still in <strong>Identity</strong>, click <strong>Invite users</strong><br/>
+  <strong>2.</strong> Enter your client's email address<br/>
+  <strong>3.</strong> They receive an email — they click the link and set their own password<br/>
+  <strong>4.</strong> ✅ They can now log in at <code>yoursite.netlify.app/admin</code>
+</div>
+
+<hr/>
+
+<h2>STEP 4 — Test the Editor</h2>
+
+<div class="step">
+  <strong>1.</strong> Go to <code>yoursite.netlify.app/admin</code><br/>
+  <strong>2.</strong> Log in with your own Netlify account or your client's new account<br/>
+  <strong>3.</strong> You'll see the <strong>Aveshe Energy Content Editor</strong> dashboard<br/>
+  <strong>4.</strong> Click <strong>Site Settings → Hero Section</strong><br/>
+  <strong>5.</strong> Change the headline text and click <strong>Publish</strong><br/>
+  <strong>6.</strong> Wait 1–2 minutes and refresh your website — the change is live! ✅
+</div>
+
+<hr/>
+
+<h2>STEP 5 — Connect Your Custom Domain (Optional)</h2>
+<p>If you want <code>www.aveshe.com</code> instead of <code>aveshe-energy.netlify.app</code>:</p>
+
+<div class="step">
+  <strong>1.</strong> In Netlify: <strong>Domain management → Add a domain</strong><br/>
+  <strong>2.</strong> Type your domain (e.g. <code>aveshe.com</code>)<br/>
+  <strong>3.</strong> Netlify will show you DNS records to add<br/>
+  <strong>4.</strong> Log in to wherever you bought your domain (GoDaddy, Namecheap etc.)<br/>
+  <strong>5.</strong> Add the DNS records Netlify shows you<br/>
+  <strong>6.</strong> Wait up to 24 hours — your custom domain will be live with free HTTPS ✅
+</div>
+
+<hr/>
+
+<h2>📝 What Your Client Can Edit</h2>
+<p>When your client logs into <code>/admin</code> they will see these sections:</p>
+<table>
+  <tr><th>Section</th><th>What they can change</th></tr>
+  <tr><td>General Info</td><td>Phone numbers, email addresses, office address</td></tr>
+  <tr><td>Hero Section</td><td>Main headline, sub-text, button labels, badge text</td></tr>
+  <tr><td>Stats Bar</td><td>The 4 statistics (10+, 250+, 98%, 24/7) and their labels</td></tr>
+  <tr><td>Services</td><td>Service titles, descriptions, images</td></tr>
+  <tr><td>Why Partner With Us</td><td>Heading, description, the 4 pillars</td></tr>
+  <tr><td>Accommodation</td><td>Suite heading, description, features, booking contact</td></tr>
+  <tr><td>Lüderitz Land</td><td>Heading, size, description, badges, checklist</td></tr>
+  <tr><td>Contact Section</td><td>Heading and description text</td></tr>
+</table>
+
+<hr/>
+
+<h2>🆘 Troubleshooting</h2>
+<table>
+  <tr><th>Problem</th><th>Fix</th></tr>
+  <tr><td>Admin page shows blank</td><td>Make sure <code>admin/index.html</code> and <code>admin/config.yml</code> are uploaded to GitHub</td></tr>
+  <tr><td>Can't log in to /admin</td><td>Make sure Netlify Identity is enabled AND Git Gateway is enabled (Step 3)</td></tr>
+  <tr><td>Changes don't appear on site</td><td>Wait 2–3 minutes after publishing — Netlify rebuilds automatically</td></tr>
+  <tr><td>Folders didn't upload to GitHub</td><td>Download GitHub Desktop from desktop.github.com and use that to upload</td></tr>
+  <tr><td>Domain not working</td><td>DNS can take up to 24 hours to propagate — just wait</td></tr>
+</table>
+
+<hr/>
+
+<h2>✅ Summary — All Free, You Own Everything</h2>
+<ul>
+  <li><span class="done">✓</span> <strong>GitHub</strong> — stores your files (free forever)</li>
+  <li><span class="done">✓</span> <strong>Netlify</strong> — hosts your website (free up to 100GB/month)</li>
+  <li><span class="done">✓</span> <strong>Decap CMS</strong> — the editor your client uses (free, open source)</li>
+  <li><span class="done">✓</span> <strong>EmailJS</strong> — contact form emails (free up to 200/month)</li>
+  <li><span class="done">✓</span> <strong>You keep 100% ownership</strong> — no platform can take your site away</li>
+</ul>
+
+<div class="note">
+  <strong>Need help?</strong> If you get stuck on any step, take a screenshot and ask Claude to help you — just paste the error or screenshot and describe where you're stuck.
+</div>
+
+<hr/>
+<p style="color:#999; font-size:0.85rem; text-align:center;">Aveshe Energy Services — Website Setup Guide · Generated June 2026</p>
+
+</body>
+</html>

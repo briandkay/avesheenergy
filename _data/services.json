@@ -1,0 +1,30 @@
+{
+  "heading": "End-to-end solutions. Proven delivery.",
+  "description": "From PPE and chemicals to lifting equipment and logistics — everything your energy project needs, sourced globally and delivered locally.",
+  "items": [
+    {
+      "number": "01",
+      "title": "PPE & Safety Equipment",
+      "description": "High-quality PPE and safety equipment from globally trusted brands for hazardous environments.",
+      "image": ""
+    },
+    {
+      "number": "02",
+      "title": "Chemicals & Consumables",
+      "description": "Industrial chemicals and consumables for upstream, midstream and downstream operations.",
+      "image": ""
+    },
+    {
+      "number": "03",
+      "title": "Lifting & Rigging Equipment",
+      "description": "Certified lifting and rigging equipment for safe and efficient operations with full documentation.",
+      "image": ""
+    },
+    {
+      "number": "04",
+      "title": "Support Services",
+      "description": "Logistics, site support, and maintenance services that keep your projects moving.",
+      "image": ""
+    }
+  ]
+}
