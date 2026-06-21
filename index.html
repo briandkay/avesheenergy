@@ -744,6 +744,20 @@
 </body>
 </html>
 
+<!-- Netlify Identity Widget — handles login redirects for CMS -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 <!-- EmailJS — sends form to davan@aveshe.com without a server -->
 <!-- SETUP (one-time, free):
   1. Go to https://www.emailjs.com and create a free account
