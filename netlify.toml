@@ -340,11 +340,11 @@
         <span>22.5740° S</span>
         <span>17.0832° E</span>
       </div>
-      <h1<span data-cms="hero_headline_1">Your local</span><br<em data-cms="hero_headline_2">energy partner.</em></em><br<span data-cms="hero_headline_3">Globally aligned.</span></h1>
+      <h1><span data-cms="hero_headline_1">Your local</span><br/><em data-cms="hero_headline_2">energy partner.</em><br/><span data-cms="hero_headline_3">Globally aligned.</span></h1>
       <p class="hero-sub" data-cms="hero_subtext">Aveshe Energy Services delivers reliable procurement and support solutions to the energy industry across Namibia and beyond.</p>
       <div class="hero-actions">
-        <a href="#services" class="btn btn-primary"<span data-cms="hero_btn_primary">Explore Our Services &#8599;</span></a>
-        <a href="#contact" class="btn btn-ghost"<span data-cms="hero_btn_secondary">Get in Touch</span></a>
+        <a href="#services" class="btn btn-primary"><span data-cms="hero_btn_primary">Explore Our Services &#8599;</span></a>
+        <a href="#contact" class="btn btn-ghost"><span data-cms="hero_btn_secondary">Get in Touch</span></a>
       </div>
       <p class="hero-region">NAMIBIA</p>
     </div>
@@ -475,7 +475,7 @@
       <div class="why-top">
         <div>
           <span class="eyebrow">Why Partner With Us</span>
-          <h2<span data-cms="why_heading_1">Local insight.</span>br<span data-cms="why_heading_2">Global capability.</span>/h2>
+          <h2><span data-cms="why_heading_1">Local insight.</span><br/><span data-cms="why_heading_2">Global capability.</span></h2>
         </div>
         <div>
           <p>We combine in-country expertise with international supply chain strength to deliver value, reliability and compliance across Namibia's energy sector.</p>
@@ -512,7 +512,7 @@
       <div class="cases-header">
         <div class="cases-header-left">
           <span class="eyebrow">Proven in the Field</span>
-          <h2<span data-cms="cases_heading">Delivering across Namibia's energy corridor</span></h2>
+          <h2><span data-cms="cases_heading">Delivering across Namibia's energy corridor</span></h2>
         </div>
         <a href="#contact" class="link-arrow">Work With Us ↗</a>
       </div>
