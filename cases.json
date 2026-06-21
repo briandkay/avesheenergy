@@ -1,0 +1,30 @@
+{
+  "colours": {
+    "maroon": "#8b2e2e",
+    "gold": "#c9a84c",
+    "maroon_deep": "#3d1010",
+    "off_white": "#f4f4f2"
+  },
+  "logo": {
+    "name": "Aveshe Energy",
+    "tagline": "Powering Namibia's Future",
+    "image": ""
+  },
+  "sections": {
+    "show_hero": true,
+    "show_stats": true,
+    "show_sectors": true,
+    "show_services": true,
+    "show_why": true,
+    "show_cases": true,
+    "show_accommodation": true,
+    "show_luderitz": true,
+    "show_contact": true
+  },
+  "fonts": {
+    "heading": "Inter",
+    "body": "Inter"
+  },
+  "button_style": "sharp",
+  "hero_layout": "split"
+}

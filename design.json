@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "icon": "🛢", "name": "Oil & Gas", "image": "" },
+    { "icon": "💨", "name": "Renewable Energy", "image": "" },
+    { "icon": "⚡", "name": "Energy Services", "image": "" }
+  ]
+}

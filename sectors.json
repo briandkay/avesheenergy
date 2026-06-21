@@ -1,0 +1,21 @@
+{
+  "heading": "Suite 10 — Klein Windhoek",
+  "description": "Premium accommodation for energy professionals. A two-bedroom executive apartment designed for consultants and project professionals requiring extended stays in Windhoek.",
+  "phone": "+264 81 622 8876",
+  "email": "davan@aveshe.com",
+  "gallery_url": "https://bit.ly/4qQ1Vri",
+  "features": [
+    {
+      "title": "Executive Living",
+      "description": "Fully equipped environments with private work areas and housekeeping, with flexible terms from one month upwards."
+    },
+    {
+      "title": "Prime Location",
+      "description": "In Klein Windhoek's professional area, near energy sector offices, with easy access to Windhoek CBD."
+    },
+    {
+      "title": "Executive Transport",
+      "description": "On-demand transport for site visits, crew rotation, and stakeholder engagements with professional drivers."
+    }
+  ]
+}

@@ -1,4 +1,1117 @@
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aveshe Energy Services | Powering Namibia's Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --maroon: #8b2e2e;
+      --maroon-light: #a34343;
+      --maroon-dark: #6a1f1f;
+      --maroon-deep: #3d1010;
+      --gold: #c9a84c;
+      --gold-light: #e0c56a;
+      --gold-dark: #a8882e;
+      --white: #ffffff;
+      --off-white: #f4f4f2;
+      --near-black: #111111;
+      --text-dark: #1a1a1a;
+      --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white); color: var(--text-dark);
+      line-height: 1.6; font-weight: 400; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139,46,46,0.1);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 32px;
+    }
+    .logo-link { text-decoration: none; display: flex; align-items: center; gap: 14px; }
+    .logo-emblem { width: 52px; height: 52px; flex-shrink: 0; }
+    .logo-text-block { display: flex; flex-direction: column; justify-content: center; gap: 2px; }
+    .logo-name { font-size: 1.05rem; font-weight: 700; color: var(--maroon-dark); letter-spacing: -0.01em; line-height: 1.1; }
+    .logo-tagline { font-size: 0.6rem; font-weight: 500; color: var(--gold-dark); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
+    .nav-links { display: flex; list-style: none; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--maroon-dark); text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--maroon); }
+    .nav-cta { background: var(--maroon) !important; color: var(--white) !important; padding: 10px 20px; border-radius: 3px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--maroon-dark) !important; color: var(--white) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: var(--maroon-dark); border-radius: 2px; transition: var(--transition); }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; padding-top: 72px;
+      background: linear-gradient(160deg, var(--near-black) 0%, #1c0a0a 50%, var(--maroon-deep) 100%);
+      display: grid; grid-template-columns: 1fr 1fr; align-items: center; overflow: hidden;
+    }
+    .hero-left { padding: 80px 48px 80px 0; position: relative; z-index: 2; }
+    .hero-coords { font-size: 0.68rem; letter-spacing: 0.15em; color: rgba(201,168,76,0.5); margin-bottom: 40px; }
+    .hero-coords span { display: block; line-height: 1.8; }
+    .hero h1 { font-size: clamp(2.6rem, 4.5vw, 4rem); font-weight: 800; line-height: 1.06; color: var(--white); letter-spacing: -0.03em; margin-bottom: 24px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-sub { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 440px; margin-bottom: 40px; font-weight: 300; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 3px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: var(--transition); border: none; cursor: pointer; }
+    .btn-primary { background: var(--gold); color: var(--near-black); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-region { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .hero-right { height: 100%; min-height: 100vh; position: relative; }
+    .hero-image-panel {
+      width: 100%; height: 100%; min-height: 100vh;
+      background: linear-gradient(160deg, rgba(61,16,16,0.6) 0%, rgba(17,17,17,0.85) 100%);
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0;
+    }
+    .hero-logo-display {
+      display: flex; flex-direction: column; align-items: center; gap: 28px;
+    }
+    .hero-logo-emblem { width: 220px; height: 220px; }
+    .hero-logo-wordmark {
+      text-align: center;
+    }
+    .hero-logo-wordmark .wm-name {
+      display: block; font-size: 2rem; font-weight: 700;
+      color: var(--white); letter-spacing: -0.01em; line-height: 1.1;
+    }
+    .hero-logo-wordmark .wm-tag {
+      display: block; font-size: 0.72rem; font-weight: 500;
+      color: var(--gold); letter-spacing: 0.22em;
+      text-transform: uppercase; margin-top: 6px;
+    }
+    .hero-badge {
+      position: absolute; bottom: 48px; right: 32px;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+      border: 1px solid rgba(201,168,76,0.3); padding: 18px 22px;
+    }
+    .hero-badge p { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; line-height: 1.7; color: rgba(255,255,255,0.85); margin: 0; font-weight: 500; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--off-white); border-bottom: 1px solid rgba(0,0,0,0.07); padding: 52px 0; }
+    .trust-inner { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; align-items: center; }
+    .trust-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--maroon); font-weight: 600; line-height: 1.5; }
+    .trust-label strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--text-dark); margin-top: 8px; line-height: 1.4; }
+    .stat-box { text-align: center; padding-left: 16px; border-left: 1px solid rgba(0,0,0,0.08); }
+    .stat-num { display: block; font-size: 2.2rem; font-weight: 800; color: var(--maroon); line-height: 1; }
+    .stat-desc { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-top: 6px; display: block; }
+
+    /* SECTORS */
+    .sectors { background: var(--near-black); }
+    .sector-eyebrow { padding: 28px 32px 0; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.55); max-width: 1200px; margin: 0 auto; }
+    .sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 20px; }
+    .sector-card { position: relative; height: 260px; overflow: hidden; cursor: pointer; }
+    .sector-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%); z-index: 1; transition: opacity 0.3s; }
+    .sector-card:hover::before { opacity: 0.6; }
+    .sector-bg-div { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.5s ease; }
+    .sector-card:hover .sector-bg-div { transform: scale(1.05); }
+    .sector-card-1 .sector-bg-div { background-image: linear-gradient(rgba(20,40,60,0.5),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=70'); }
+    .sector-card-2 .sector-bg-div { background-image: linear-gradient(rgba(20,40,20,0.5),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&auto=format&fit=crop&q=70'); }
+    .sector-card-3 .sector-bg-div { background-image: linear-gradient(rgba(40,20,10,0.5),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&auto=format&fit=crop&q=70'); }
+    .sector-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 26px 22px; z-index: 2; }
+    .sector-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .sector-name { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); }
+    .sector-arrow { position: absolute; top: 22px; right: 22px; z-index: 2; width: 28px; height: 28px; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.8rem; transition: var(--transition); }
+    .sector-card:hover .sector-arrow { background: var(--gold); border-color: var(--gold); color: var(--near-black); }
+
+    /* SERVICES */
+    .services-section { background: var(--white); padding: 80px 0; }
+    .services-layout { display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
+    .eyebrow { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--maroon); font-weight: 600; margin-bottom: 18px; display: block; }
+    .services-intro h2 { font-size: 2rem; font-weight: 800; line-height: 1.1; color: var(--text-dark); letter-spacing: -0.02em; margin-bottom: 20px; }
+    .services-intro p { font-size: 0.88rem; color: #666; line-height: 1.75; margin-bottom: 28px; }
+    .link-arrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--maroon); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(139,46,46,0.3); padding-bottom: 2px; transition: var(--transition); }
+    .link-arrow:hover { color: var(--maroon-dark); }
+    .services-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .service-card-v2 { border: 1px solid rgba(0,0,0,0.09); border-radius: 3px; overflow: hidden; transition: var(--transition); }
+    .service-card-v2:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(139,46,46,0.09); }
+    .service-num { padding: 14px 18px 0; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--gold-dark); font-weight: 700; }
+    .service-title { padding: 6px 18px 10px; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); line-height: 1.3; text-transform: uppercase; letter-spacing: 0.04em; }
+    .service-image-div { width: 100%; height: 130px; background-size: cover; background-position: center; }
+    .service-card-v2:nth-child(1) .service-image-div { background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&auto=format&fit=crop&q=70'); }
+    .service-card-v2:nth-child(2) .service-image-div { background-image: url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&auto=format&fit=crop&q=70'); }
+    .service-card-v2:nth-child(3) .service-image-div { background-image: url('https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400&auto=format&fit=crop&q=70'); }
+    .service-card-v2:nth-child(4) .service-image-div { background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400&auto=format&fit=crop&q=70'); }
+    .service-desc { padding: 12px 18px; font-size: 0.76rem; color: #666; line-height: 1.6; }
+    .service-link { padding: 8px 18px 16px; font-size: 0.68rem; color: var(--maroon); font-weight: 700; display: block; text-decoration: none; letter-spacing: 0.06em; }
+
+    /* WHY */
+    .why-section { background: var(--maroon-deep); padding: 80px 0; }
+    .why-top { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; margin-bottom: 56px; align-items: end; }
+    .why-section .eyebrow { color: rgba(201,168,76,0.65); }
+    .why-top h2 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.1; letter-spacing: -0.02em; }
+    .why-top p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 300; }
+    .why-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .pillar { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 24px; }
+    .pillar-icon { font-size: 1.5rem; margin-bottom: 12px; display: block; }
+    .pillar h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .pillar p { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
+
+    /* CASES */
+    .cases-section { background: var(--off-white); padding: 80px 0; }
+    .cases-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; }
+    .cases-header-left .eyebrow { margin-bottom: 8px; }
+    .cases-header h2 { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.02em; }
+    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .case-card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); border-radius: 3px; overflow: hidden; transition: var(--transition); }
+    .case-card:hover { border-color: rgba(139,46,46,0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .case-image-div { height: 180px; background-size: cover; background-position: center; }
+    .case-card:nth-child(1) .case-image-div { background-image: linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=500&auto=format&fit=crop&q=70'); }
+    .case-card:nth-child(2) .case-image-div { background-image: linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&auto=format&fit=crop&q=70'); }
+    .case-card:nth-child(3) .case-image-div { background-image: linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&auto=format&fit=crop&q=70'); }
+    .case-body { padding: 22px; }
+    .case-region { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--maroon); font-weight: 600; margin-bottom: 6px; display: block; }
+    .case-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); line-height: 1.3; margin-bottom: 14px; }
+    .case-link { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--maroon); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .case-link:hover { color: var(--maroon-dark); }
+
+    /* ACCOMMODATION */
+    .alt-section { padding: 80px 0; background: var(--white); }
+    .alt-section-dark { padding: 80px 0; background: var(--maroon); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .two-col.flip { direction: rtl; }
+    .two-col.flip > * { direction: ltr; }
+    .section-label-pill { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.35); padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
+    .alt-section h2 { font-size: 1.9rem; font-weight: 800; color: var(--text-dark); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .alt-section-dark h2 { font-size: 1.9rem; font-weight: 800; color: var(--gold); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .alt-section p { font-size: 0.88rem; color: #555; line-height: 1.75; margin-bottom: 12px; }
+    .alt-section-dark p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 12px; }
+    .visual-cards { display: flex; flex-direction: column; gap: 14px; }
+    .vis-card { background: var(--off-white); border: 1px solid rgba(0,0,0,0.07); border-radius: 5px; padding: 20px 22px; }
+    .vis-card h4 { font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+    .vis-card p { font-size: 0.8rem; color: #666; margin: 0; line-height: 1.6; }
+    .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 3px; font-size: 0.8rem; font-weight: 600; color: var(--off-white); }
+    .checklist { list-style: none; margin-top: 18px; }
+    .checklist li { font-size: 0.84rem; color: rgba(255,255,255,0.8); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; gap: 10px; }
+    .checklist li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .highlight-box { background: rgba(255,255,255,0.07); border-left: 3px solid var(--gold); padding: 16px 18px; border-radius: 2px; margin-top: 18px; }
+    .highlight-box strong { color: var(--gold); display: block; margin-bottom: 4px; font-size: 0.82rem; }
+    .highlight-box p { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.6; }
+    .suite-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+    .feat-box { background: var(--off-white); border: 1px solid rgba(0,0,0,0.07); border-radius: 5px; padding: 18px 14px; text-align: center; }
+    .feat-num { font-size: 2rem; font-weight: 800; color: var(--maroon); line-height: 1; }
+    .feat-icon { font-size: 1.6rem; color: var(--maroon); }
+    .feat-box h4 { font-size: 0.72rem; color: var(--text-dark); font-weight: 600; margin-top: 5px; }
+    .suite-cta { background: var(--off-white); border: 1px solid rgba(0,0,0,0.07); border-radius: 5px; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+    .suite-cta p { font-size: 0.85rem; color: var(--text-dark); margin: 0; }
+
+    /* CONTACT */
+    .contact-section { background: var(--white); padding: 80px 0; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.1fr 0.85fr; gap: 56px; align-items: start; }
+    .contact-intro h2 { font-size: 2.4rem; font-weight: 800; color: var(--text-dark); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .contact-intro p { font-size: 0.86rem; color: #666; line-height: 1.75; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .form-field { border: 1px solid rgba(0,0,0,0.15); padding: 11px 14px; font-family: inherit; font-size: 0.8rem; color: var(--text-dark); background: var(--white); outline: none; width: 100%; border-radius: 2px; transition: border-color 0.2s; }
+    .form-field:focus { border-color: var(--maroon); }
+    .form-field::placeholder { color: #bbb; }
+    .form-field-full { border: 1px solid rgba(0,0,0,0.15); padding: 11px 14px; font-family: inherit; font-size: 0.8rem; color: var(--text-dark); background: var(--white); outline: none; width: 100%; border-radius: 2px; margin-bottom: 10px; resize: vertical; min-height: 80px; transition: border-color 0.2s; }
+    .form-field-full:focus { border-color: var(--maroon); }
+    .form-field-full::placeholder { color: #bbb; }
+    .btn-submit { background: var(--near-black); color: var(--white); border: none; padding: 12px 28px; font-family: inherit; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border-radius: 2px; transition: background 0.2s; }
+    .btn-submit:hover { background: var(--maroon); }
+    .offices-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--maroon); font-weight: 600; margin-bottom: 18px; display: block; }
+    .office-entry { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .office-entry:last-child { border-bottom: none; }
+    .office-entry strong { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+    .office-entry p, .office-entry a { font-size: 0.78rem; color: #777; line-height: 1.65; display: block; text-decoration: none; margin: 0; }
+    .office-entry a:hover { color: var(--maroon); }
+    .map-link { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--maroon); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; }
+
+    /* FOOTER */
+    .footer { background: var(--near-black); padding: 56px 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+    .footer-brand-p { font-size: 0.78rem; color: rgba(255,255,255,0.38); line-height: 1.7; margin-top: 16px; max-width: 240px; }
+    .footer-col h5 { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 600; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 9px; }
+    .footer-col ul li a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-social { display: flex; gap: 10px; margin-top: 6px; }
+    .footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: var(--transition); border-radius: 2px; }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.7rem; color: rgba(255,255,255,0.22); }
+    .footer-bottom-links { display: flex; gap: 22px; }
+    .footer-bottom-links a { font-size: 0.7rem; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.55); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 80px 0; }
+      .trust-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .services-layout { grid-template-columns: 1fr; gap: 36px; }
+      .services-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .why-pillars { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .contact-layout { grid-template-columns: 1fr 1fr; }
+      .two-col, .two-col.flip { grid-template-columns: 1fr; direction: ltr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links { position: fixed; top: 72px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 20px 28px; gap: 14px; border-bottom: 1px solid rgba(0,0,0,0.08); transform: translateY(-110%); transition: transform 0.3s ease; z-index: 999; }
+      .nav-links.open { transform: translateY(0); }
+      .sectors-grid { grid-template-columns: 1fr; }
+      .why-top { grid-template-columns: 1fr; gap: 20px; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .suite-features { grid-template-columns: repeat(2, 1fr); }
+      .cases-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .hero h1 { font-size: 2.2rem; }
+      .container { padding: 0 20px; }
+    }
+    @media (max-width: 480px) {
+      .why-pillars { grid-template-columns: 1fr; }
+      .services-grid-4 { grid-template-columns: 1fr; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .stat-box { border-left: none; border-top: 1px solid rgba(0,0,0,0.08); padding-left: 0; padding-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo-link">
+        <svg class="logo-emblem" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- 8 perfectly symmetrical rays via rotate -->
+          <g stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round">
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(0   26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(45  26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(90  26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(135 26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(180 26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(225 26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(270 26 26)"/>
+            <line x1="26" y1="2"  x2="26" y2="9"  transform="rotate(315 26 26)"/>
+          </g>
+          <circle cx="26" cy="26" r="13" fill="#c9a84c"/>
+          <text x="26" y="31.5" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="17" fill="#6a1f1f">A</text>
+        </svg>
+        <div class="logo-text-block">
+          <span class="logo-name">Aveshe Energy</span>
+          <span class="logo-tagline">Powering Namibia's Future</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#accommodation">Accommodation</a></li>
+        <li><a href="#land">Lüderitz</a></li>
+        <li><a href="#contact" class="nav-cta">Request a Quote ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-left" style="padding-left: max(32px, calc((100vw - 1200px)/2 + 32px)); padding-right: 48px;">
+      <div class="hero-coords">
+        <span>22.5740° S</span>
+        <span>17.0832° E</span>
+      </div>
+      <h1<span data-cms="hero_headline_1">Your local</span><br<em data-cms="hero_headline_2">energy partner.</em></em><br<span data-cms="hero_headline_3">Globally aligned.</span></h1>
+      <p class="hero-sub" data-cms="hero_subtext">Aveshe Energy Services delivers reliable procurement and support solutions to the energy industry across Namibia and beyond.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary"<span data-cms="hero_btn_primary">Explore Our Services &#8599;</span></a>
+        <a href="#contact" class="btn btn-ghost"<span data-cms="hero_btn_secondary">Get in Touch</span></a>
+      </div>
+      <p class="hero-region">NAMIBIA</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-image-panel">
+        <div class="hero-logo-display">
+          <!-- Large hero logo SVG -->
+          <svg class="hero-logo-emblem" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g stroke="#c9a84c" stroke-width="6" stroke-linecap="round">
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(0   110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(45  110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(90  110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(135 110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(180 110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(225 110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(270 110 110)"/>
+              <line x1="110" y1="8"  x2="110" y2="34" transform="rotate(315 110 110)"/>
+            </g>
+            <circle cx="110" cy="110" r="58" fill="#c9a84c"/>
+            <text x="110" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="76" fill="#6a1f1f">A</text>
+          </svg>
+          <div class="hero-logo-wordmark">
+            <span class="wm-name">Aveshe Energy</span>
+            <span class="wm-tag">Powering Namibia's Future</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <p>LOCAL PRESENCE.<br>INTERNATIONAL<br>STANDARDS.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-inner">
+        <div class="trust-label">
+          TRUSTED BY
+          <strong><span data-cms="trust_label">Energy companies that build, power and progress.</span></strong>
+        </div>
+        <div class="stat-box"><span class="stat-num" data-cms="stat_num">10+</span><span class="stat-desc" data-cms="stat_label">Years in Energy</span></div>
+        <div class="stat-box"><span class="stat-num" data-cms="stat_num">250+</span><span class="stat-desc" data-cms="stat_label">Global Suppliers</span></div>
+        <div class="stat-box"><span class="stat-num" data-cms="stat_num">98%</span><span class="stat-desc" data-cms="stat_label">On-Time Delivery</span></div>
+        <div class="stat-box"><span class="stat-num" data-cms="stat_num">24/7</span><span class="stat-desc" data-cms="stat_label">Support Across Namibia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORS -->
+  <section class="sectors">
+    <div class="sector-eyebrow">SERVING THE ENERGY SECTORS</div>
+    <div class="sectors-grid">
+      <div class="sector-card sector-card-1">
+        <div class="sector-bg-div"></div>
+        <div class="sector-arrow">↗</div>
+        <div class="sector-info">
+          <span class="sector-icon">🛢</span>
+          <p class="sector-name">Oil &amp; Gas</p>
+        </div>
+      </div>
+      <div class="sector-card sector-card-2">
+        <div class="sector-bg-div"></div>
+        <div class="sector-arrow">↗</div>
+        <div class="sector-info">
+          <span class="sector-icon">💨</span>
+          <p class="sector-name">Renewable Energy</p>
+        </div>
+      </div>
+      <div class="sector-card sector-card-3">
+        <div class="sector-bg-div"></div>
+        <div class="sector-arrow">↗</div>
+        <div class="sector-info">
+          <span class="sector-icon">⚡</span>
+          <p class="sector-name">Energy Services</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-layout">
+        <div class="services-intro">
+          <span class="eyebrow">What We Do</span>
+          <h2>End-to-end solutions. Proven delivery.</h2>
+          <p>From PPE and chemicals to lifting equipment and logistics — everything your energy project needs, sourced globally and delivered locally.</p>
+          <a href="#contact" class="link-arrow">View All Services ↗</a>
+        </div>
+        <div class="services-grid-4">
+          <div class="service-card-v2">
+            <div class="service-num">01</div>
+            <div class="service-title">PPE &amp; Safety Equipment</div>
+            <div class="service-image-div"></div>
+            <div class="service-desc">High-quality PPE and safety equipment from globally trusted brands for hazardous environments.</div>
+            <a href="#contact" class="service-link">↗</a>
+          </div>
+          <div class="service-card-v2">
+            <div class="service-num">02</div>
+            <div class="service-title">Chemicals &amp; Consumables</div>
+            <div class="service-image-div"></div>
+            <div class="service-desc">Industrial chemicals and consumables for upstream, midstream and downstream operations.</div>
+            <a href="#contact" class="service-link">↗</a>
+          </div>
+          <div class="service-card-v2">
+            <div class="service-num">03</div>
+            <div class="service-title">Lifting &amp; Rigging Equipment</div>
+            <div class="service-image-div"></div>
+            <div class="service-desc">Certified lifting and rigging equipment for safe and efficient operations with full documentation.</div>
+            <a href="#contact" class="service-link">↗</a>
+          </div>
+          <div class="service-card-v2">
+            <div class="service-num">04</div>
+            <div class="service-title">Support Services</div>
+            <div class="service-image-div"></div>
+            <div class="service-desc">Logistics, site support, and maintenance services that keep your projects moving.</div>
+            <a href="#contact" class="service-link">↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PARTNER -->
+  <section class="why-section" id="about">
+    <div class="container">
+      <div class="why-top">
+        <div>
+          <span class="eyebrow">Why Partner With Us</span>
+          <h2<span data-cms="why_heading_1">Local insight.</span>br<span data-cms="why_heading_2">Global capability.</span>/h2>
+        </div>
+        <div>
+          <p>We combine in-country expertise with international supply chain strength to deliver value, reliability and compliance across Namibia's energy sector.</p>
+        </div>
+      </div>
+      <div class="why-pillars">
+        <div class="pillar">
+          <span class="pillar-icon">📍</span>
+          <h4>Local Expertise</h4>
+          <p>On-the-ground teams with deep knowledge of Namibia's energy landscape and regulatory requirements.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🌐</span>
+          <h4>Global Network</h4>
+          <p>Access to quality suppliers and OEMs from around the world, ensuring the best solutions.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🛡</span>
+          <h4>Safety &amp; Quality</h4>
+          <p>Committed to the highest safety, quality and environmental standards across all operations.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">⏱</span>
+          <h4>Responsive Service</h4>
+          <p>Agile, reliable and ready 24/7 to support your operations and meet critical deadlines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVEN IN THE FIELD -->
+  <section class="cases-section">
+    <div class="container">
+      <div class="cases-header">
+        <div class="cases-header-left">
+          <span class="eyebrow">Proven in the Field</span>
+          <h2<span data-cms="cases_heading">Delivering across Namibia's energy corridor</span></h2>
+        </div>
+        <a href="#contact" class="link-arrow">Work With Us ↗</a>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-image-div"></div>
+          <div class="case-body">
+            <span class="case-region">Offshore Namibia</span>
+            <h3>Drilling Campaign Support</h3>
+            <a href="#contact" class="case-link">View Case Study ↗</a>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-image-div"></div>
+          <div class="case-body">
+            <span class="case-region">Omegas Region</span>
+            <h3>Renewables Project Supply</h3>
+            <a href="#contact" class="case-link">View Case Study ↗</a>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-image-div"></div>
+          <div class="case-body">
+            <span class="case-region">Onshore Operations</span>
+            <h3>Turnaround Maintenance Support</h3>
+            <a href="#contact" class="case-link">View Case Study ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMMODATION -->
+  <section class="alt-section" id="accommodation">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="section-label-pill">Accommodation</span>
+          <h2>Suite 10 — Klein Windhoek</h2>
+          <p>Premium accommodation for energy professionals. A two-bedroom executive apartment designed for consultants and project professionals requiring extended stays in Windhoek.</p>
+          <div class="suite-features">
+            <div class="feat-box"><div class="feat-num">2</div><h4>Bedrooms</h4></div>
+            <div class="feat-box"><div class="feat-num">2</div><h4>Bathrooms</h4></div>
+            <div class="feat-box"><div class="feat-icon">🍳</div><h4>Chef Kitchen</h4></div>
+            <div class="feat-box"><div class="feat-icon">🏢</div><h4>Balcony</h4></div>
+            <div class="feat-box"><div class="feat-icon">📶</div><h4>WiFi &amp; Laundry</h4></div>
+            <div class="feat-box"><div class="feat-icon">🔒</div><h4>Secure Parking</h4></div>
+          </div>
+          <div class="suite-cta">
+            <p>Contact <strong>+264 81 622 8876</strong> or <strong>davan@aveshe.com</strong> for bookings.</p>
+            <a href="https://bit.ly/4qQ1Vri" target="_blank" class="btn btn-primary">View Suite Gallery ↗</a>
+          </div>
+        </div>
+        <div class="visual-cards">
+          <div class="vis-card">
+            <h4>Executive Living</h4>
+            <p>Fully equipped environments with private work areas and housekeeping, with flexible terms from one month upwards.</p>
+          </div>
+          <div class="vis-card">
+            <h4>Prime Location</h4>
+            <p>In Klein Windhoek's professional area, near energy sector offices, with easy access to Windhoek CBD.</p>
+          </div>
+          <div class="vis-card">
+            <h4>Executive Transport</h4>
+            <p>On-demand transport for site visits, crew rotation, and stakeholder engagements with professional drivers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÜDERITZ -->
+  <section class="alt-section-dark" id="land">
+    <div class="container">
+      <div class="two-col flip">
+        <div>
+          <span class="section-label-pill">Strategic Land</span>
+          <h2>Erf 96 — Lüderitz</h2>
+          <p style="font-size:1.05rem; font-weight:600; color: var(--gold-light); margin-bottom: 12px;">18,000 m² Available for Lease</p>
+          <p>Strategically located industrial land in Lüderitz — Namibia's emerging logistics hub for offshore oil and gas. Available for energy operators, service companies, and equipment suppliers.</p>
+          <div class="highlight-box">
+            <strong>Location Advantage</strong>
+            <p>Closest deep-water port access to the major Orange Basin discovery blocks, with ongoing infrastructure development as a designated energy support base.</p>
+          </div>
+        </div>
+        <div>
+          <div class="badge-grid" data-cms="lud_badges" style="margin-bottom: 14px;">
+            <div class="badge">Orange Basin Access</div>
+            <div class="badge">Deep-Water Port</div>
+            <div class="badge">Energy Support Base</div>
+          </div>
+          <ul class="checklist" data-cms="lud_checklist">
+            <li>18,000 m² Industrial Land</li>
+            <li>Strategic Coastal Location</li>
+            <li>Namibia Energy Corridor</li>
+            <li>Flexible Lease Terms Available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-intro">
+          <span class="eyebrow">Let's Work Together</span>
+          <h2>Let's power what's next.</h2>
+          <p>Tell us about your project and our team will deliver the right solution — from procurement to deployment across Namibia's energy corridor.</p>
+        </div>
+        <div>
+          <div class="form-row">
+            <input id="f-name"    type="text"  class="form-field" placeholder="Full Name" />
+            <input id="f-company" type="text"  class="form-field" placeholder="Company" />
+          </div>
+          <div class="form-row">
+            <input id="f-email" type="email" class="form-field" placeholder="Work Email" />
+            <input id="f-phone" type="tel"   class="form-field" placeholder="Phone Number" />
+          </div>
+          <textarea id="f-message" class="form-field-full" placeholder="Project / Requirements"></textarea>
+          <button class="btn-submit" id="enquiryBtn" onclick="sendEnquiry()">Send Enquiry &#8599;</button>
+          <p id="form-status" style="margin-top:12px;font-size:0.8rem;display:none;"></p>
+        </div>
+        <div>
+          <span class="offices-label">Offices</span>
+          <div class="office-entry">
+            <strong>Windhoek, Namibia</strong>
+            <p>Dr. Theo Ben Gurirab Street</p>
+            <p>Luxury Hill, Klein Windhoek</p>
+            <a href="tel:+26461227036">+264 61 227 036</a>
+            <a href="mailto:klaudiakay@aveshe.com">klaudiakay@aveshe.com</a>
+            <a href="#" class="map-link">View on Map ↗</a>
+          </div>
+          <div class="office-entry">
+            <strong>Lüderitz, Namibia</strong>
+            <p>Erf 96, Industrial Zone</p>
+            <a href="tel:+264816228876">+264 81 622 8876</a>
+            <a href="mailto:davan@aveshe.com">davan@aveshe.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="#" class="logo-link" style="margin-bottom: 0;">
+            <svg class="logo-emblem" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round">
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(0   26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(45  26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(90  26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(135 26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(180 26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(225 26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(270 26 26)"/>
+                <line x1="26" y1="2" x2="26" y2="9" transform="rotate(315 26 26)"/>
+              </g>
+              <circle cx="26" cy="26" r="13" fill="#c9a84c"/>
+              <text x="26" y="31.5" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="17" fill="#3d1010">A</text>
+            </svg>
+            <div class="logo-text-block">
+              <span class="logo-name" style="color: #fff;">Aveshe Energy</span>
+              <span class="logo-tagline">Powering Namibia's Future</span>
+            </div>
+          </a>
+          <p class="footer-brand-p"><span data-cms="footer_tagline">Powering progress in Namibia's energy sector through reliable supply and trusted partnerships.</span></p>
+          <div class="footer-social"><a href="#" aria-label="LinkedIn">in</a></div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#accommodation">Accommodation</a></li>
+            <li><a href="#land">Lüderitz Land</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">PPE &amp; Safety Equipment</a></li>
+            <li><a href="#services">Chemicals &amp; Consumables</a></li>
+            <li><a href="#services">Lifting &amp; Rigging Equipment</a></li>
+            <li><a href="#services">Support Services</a></li>
+            <li><a href="#services">Logistics &amp; Transportation</a></li>
+            <li><a href="#services">Project Procurement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Stay Connected</h5>
+          <ul>
+            <li><a href="mailto:klaudiakay@aveshe.com">klaudiakay@aveshe.com</a></li>
+            <li><a href="mailto:davan@aveshe.com">davan@aveshe.com</a></li>
+            <li><a href="tel:+26461227036">+264 61 227 036</a></li>
+            <li><a href="https://aveshe.com" target="_blank">aveshe.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p><span data-cms="footer_copyright">© 2026 Aveshe Energy Services (Pty) Ltd. All rights reserved.</span></p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
+<!-- Dynamic CMS Data Loader — applies design settings and content from JSON files -->
+<script>
+(async function() {
+  try {
+    // Load all data files in parallel
+    const [design, general, hero, stats, sectors, services, why, cases, accommodation, luderitz, contact, footer] = await Promise.all([
+      fetch('/_data/design.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/general.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/hero.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/stats.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/sectors.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/services.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/why.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/cases.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/accommodation.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/luderitz.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/contact.json').then(r => r.json()).catch(() => null),
+      fetch('/_data/footer.json').then(r => r.json()).catch(() => null),
+    ]);
+
+    // ── APPLY DESIGN SETTINGS ──────────────────────────────────
+    if (design) {
+      const root = document.documentElement;
+      const c = design.colours || {};
+
+      // Colours
+      if (c.maroon)      { root.style.setProperty('--maroon',      c.maroon); root.style.setProperty('--maroon-light', c.maroon); root.style.setProperty('--maroon-dark', shadeColor(c.maroon, -15)); }
+      if (c.gold)        { root.style.setProperty('--gold',        c.gold);   root.style.setProperty('--gold-light',  shadeColor(c.gold, 15)); root.style.setProperty('--gold-dark', shadeColor(c.gold, -15)); }
+      if (c.maroon_deep) { root.style.setProperty('--maroon-deep', c.maroon_deep); }
+      if (c.off_white)   { root.style.setProperty('--off-white',   c.off_white); }
+
+      // Fonts
+      if (design.fonts) {
+        const hFont = design.fonts.heading || 'Inter';
+        const bFont = design.fonts.body || 'Inter';
+        const fontLink = document.createElement('link');
+        const googleFonts = [...new Set([hFont, bFont])].filter(f => f !== 'Inter').map(f => f.replace(/ /g, '+')).join('&family=');
+        if (googleFonts) {
+          fontLink.rel = 'stylesheet';
+          fontLink.href = `https://fonts.googleapis.com/css2?family=${googleFonts}:wght@300;400;500;600;700;800&display=swap`;
+          document.head.appendChild(fontLink);
+        }
+        document.body.style.fontFamily = `'${bFont}', sans-serif`;
+        document.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(el => el.style.fontFamily = `'${hFont}', sans-serif`);
+      }
+
+      // Button style
+      if (design.button_style) {
+        const radius = design.button_style === 'rounded' ? '50px' : design.button_style === 'semi' ? '8px' : '3px';
+        document.querySelectorAll('.btn, .btn-submit, .nav-cta').forEach(el => el.style.borderRadius = radius);
+      }
+
+      // Hero layout
+      if (design.hero_layout === 'centred') {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          hero.style.gridTemplateColumns = '1fr';
+          hero.style.textAlign = 'center';
+          hero.style.justifyItems = 'center';
+        }
+        const heroRight = document.querySelector('.hero-right');
+        if (heroRight) heroRight.style.display = 'none';
+        const heroLeft = document.querySelector('.hero-left');
+        if (heroLeft) { heroLeft.style.paddingRight = '0'; heroLeft.style.maxWidth = '800px'; heroLeft.style.margin = '0 auto'; }
+      }
+
+      // Logo image override
+      if (design.logo && design.logo.image) {
+        document.querySelectorAll('.logo-emblem').forEach(el => {
+          const img = document.createElement('img');
+          img.src = design.logo.image;
+          img.style.cssText = 'width:52px;height:52px;object-fit:contain;';
+          el.replaceWith(img);
+        });
+      }
+
+      // Logo text
+      if (design.logo) {
+        document.querySelectorAll('.logo-name').forEach(el => { if (design.logo.name) el.textContent = design.logo.name; });
+        document.querySelectorAll('.logo-tagline').forEach(el => { if (design.logo.tagline) el.textContent = design.logo.tagline; });
+      }
+
+      // Section visibility
+      if (design.sections) {
+        const s = design.sections;
+        const toggleSection = (selector, show) => { const el = document.querySelector(selector); if (el) el.style.display = show ? '' : 'none'; };
+        toggleSection('.hero',          s.show_hero !== false);
+        toggleSection('.trust-bar',     s.show_stats !== false);
+        toggleSection('.sectors',       s.show_sectors !== false);
+        toggleSection('#services',      s.show_services !== false);
+        toggleSection('#about',         s.show_why !== false);
+        toggleSection('.cases-section', s.show_cases !== false);
+        toggleSection('#accommodation', s.show_accommodation !== false);
+        toggleSection('#land',          s.show_luderitz !== false);
+        toggleSection('#contact',       s.show_contact !== false);
+      }
+    }
+
+    // ── GENERAL INFO ───────────────────────────────────────────
+    if (general) {
+      setText('[data-cms="phone_windhoek"]', general.phone_windhoek);
+      setText('[data-cms="phone_luderitz"]', general.phone_luderitz);
+      setAttr('[data-cms="phone_windhoek_link"]', 'href', 'tel:' + (general.phone_windhoek || ''));
+      setAttr('[data-cms="phone_luderitz_link"]', 'href', 'tel:' + (general.phone_luderitz || ''));
+      setText('[data-cms="email_enquiries"]', general.email_enquiries);
+      setText('[data-cms="email_bookings"]', general.email_bookings);
+      setAttr('[data-cms="email_enquiries_link"]', 'href', 'mailto:' + (general.email_enquiries || ''));
+      setAttr('[data-cms="email_bookings_link"]', 'href', 'mailto:' + (general.email_bookings || ''));
+      setText('[data-cms="address_windhoek"]', general.address_windhoek);
+      if (general.linkedin_url) setAttr('[data-cms="linkedin_url"]', 'href', general.linkedin_url);
+    }
+
+    // ── HERO ───────────────────────────────────────────────────
+    if (hero) {
+      setText('[data-cms="hero_headline_1"]', hero.headline_1);
+      setText('[data-cms="hero_headline_2"]', hero.headline_2);
+      setText('[data-cms="hero_headline_3"]', hero.headline_3);
+      setText('[data-cms="hero_subtext"]', hero.subtext);
+      setText('[data-cms="hero_btn_primary"]', hero.btn_primary);
+      setText('[data-cms="hero_btn_secondary"]', hero.btn_secondary);
+      setText('[data-cms="hero_badge"]', hero.badge);
+      if (hero.bg_image) {
+        const panel = document.querySelector('.hero-image-panel');
+        if (panel) panel.style.backgroundImage = `linear-gradient(135deg,rgba(139,46,46,0.25) 0%,rgba(0,0,0,0.5) 100%), url('${hero.bg_image}')`;
+      }
+    }
+
+    // ── STATS ──────────────────────────────────────────────────
+    if (stats) {
+      setText('[data-cms="trust_label"]', stats.trust_label);
+      if (stats.items) {
+        const nums = document.querySelectorAll('[data-cms="stat_num"]');
+        const labels = document.querySelectorAll('[data-cms="stat_label"]');
+        stats.items.forEach((item, i) => {
+          if (nums[i])   nums[i].textContent   = item.number;
+          if (labels[i]) labels[i].textContent = item.label;
+        });
+      }
+    }
+
+    // ── SECTORS ────────────────────────────────────────────────
+    if (sectors && sectors.items) {
+      const cards = document.querySelectorAll('.sector-card');
+      sectors.items.forEach((item, i) => {
+        if (!cards[i]) return;
+        const icon = cards[i].querySelector('.sector-icon');
+        const name = cards[i].querySelector('.sector-name');
+        if (icon) icon.textContent = item.icon;
+        if (name) name.textContent = item.name;
+        if (item.image) {
+          const bg = cards[i].querySelector('.sector-bg-div');
+          if (bg) bg.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)), url('${item.image}')`;
+        }
+      });
+    }
+
+    // ── SERVICES ───────────────────────────────────────────────
+    if (services) {
+      setText('[data-cms="services_heading"]', services.heading);
+      setText('[data-cms="services_desc"]', services.description);
+      if (services.items) {
+        const cards = document.querySelectorAll('.service-card-v2');
+        services.items.forEach((item, i) => {
+          if (!cards[i]) return;
+          const num   = cards[i].querySelector('.service-num');
+          const title = cards[i].querySelector('.service-title');
+          const desc  = cards[i].querySelector('.service-desc');
+          const img   = cards[i].querySelector('.service-image-div');
+          if (num)   num.textContent   = item.number;
+          if (title) title.textContent = item.title;
+          if (desc)  desc.textContent  = item.description;
+          if (img && item.image) img.style.backgroundImage = `url('${item.image}')`;
+        });
+      }
+    }
+
+    // ── WHY ────────────────────────────────────────────────────
+    if (why) {
+      setText('[data-cms="why_heading_1"]', why.heading_1);
+      setText('[data-cms="why_heading_2"]', why.heading_2);
+      setText('[data-cms="why_desc"]', why.description);
+      if (why.pillars) {
+        const pillars = document.querySelectorAll('.pillar');
+        why.pillars.forEach((item, i) => {
+          if (!pillars[i]) return;
+          const icon  = pillars[i].querySelector('.pillar-icon');
+          const title = pillars[i].querySelector('h4');
+          const desc  = pillars[i].querySelector('p');
+          if (icon)  icon.textContent  = item.icon;
+          if (title) title.textContent = item.title;
+          if (desc)  desc.textContent  = item.description;
+        });
+      }
+    }
+
+    // ── CASES ──────────────────────────────────────────────────
+    if (cases) {
+      setText('[data-cms="cases_heading"]', cases.heading);
+      if (cases.items) {
+        const cards = document.querySelectorAll('.case-card');
+        cases.items.forEach((item, i) => {
+          if (!cards[i]) return;
+          const region = cards[i].querySelector('.case-region');
+          const title  = cards[i].querySelector('h3');
+          const img    = cards[i].querySelector('.case-image-div');
+          if (region) region.textContent = item.region;
+          if (title)  title.textContent  = item.title;
+          if (img && item.image) img.style.backgroundImage = `linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.35)), url('${item.image}')`;
+        });
+      }
+    }
+
+    // ── ACCOMMODATION ──────────────────────────────────────────
+    if (accommodation) {
+      setText('[data-cms="acc_heading"]', accommodation.heading);
+      setText('[data-cms="acc_desc"]', accommodation.description);
+      setText('[data-cms="acc_phone"]', accommodation.phone);
+      setText('[data-cms="acc_email"]', accommodation.email);
+      setAttr('[data-cms="acc_gallery"]', 'href', accommodation.gallery_url);
+      if (accommodation.features) {
+        const cards = document.querySelectorAll('.vis-card');
+        accommodation.features.forEach((item, i) => {
+          if (!cards[i]) return;
+          const title = cards[i].querySelector('h4');
+          const desc  = cards[i].querySelector('p');
+          if (title) title.textContent = item.title;
+          if (desc)  desc.textContent  = item.description;
+        });
+      }
+    }
+
+    // ── LUDERITZ ───────────────────────────────────────────────
+    if (luderitz) {
+      setText('[data-cms="lud_heading"]', luderitz.heading);
+      setText('[data-cms="lud_size"]', luderitz.size);
+      setText('[data-cms="lud_desc"]', luderitz.description);
+      setText('[data-cms="lud_highlight_title"]', luderitz.highlight_title);
+      setText('[data-cms="lud_highlight_text"]', luderitz.highlight_text);
+      if (luderitz.badges) {
+        const container = document.querySelector('[data-cms="lud_badges"]');
+        if (container) {
+          container.innerHTML = luderitz.badges.map(b => `<div class="badge">${b.text}</div>`).join('');
+        }
+      }
+      if (luderitz.checklist) {
+        const list = document.querySelector('[data-cms="lud_checklist"]');
+        if (list) {
+          list.innerHTML = luderitz.checklist.map(i => `<li>${i.text}</li>`).join('');
+        }
+      }
+    }
+
+    // ── CONTACT ────────────────────────────────────────────────
+    if (contact) {
+      setText('[data-cms="contact_heading_1"]', contact.heading_1);
+      setText('[data-cms="contact_heading_2"]', contact.heading_2);
+      setText('[data-cms="contact_desc"]', contact.description);
+    }
+
+    // ── FOOTER ─────────────────────────────────────────────────
+    if (footer) {
+      setText('[data-cms="footer_tagline"]', footer.tagline);
+      setText('[data-cms="footer_copyright"]', footer.copyright);
+    }
+
+  } catch(e) {
+    console.log('CMS data load:', e.message);
+  }
+
+  function setText(selector, value) {
+    if (!value) return;
+    document.querySelectorAll(selector).forEach(el => el.textContent = value);
+  }
+  function setAttr(selector, attr, value) {
+    if (!value) return;
+    document.querySelectorAll(selector).forEach(el => el.setAttribute(attr, value));
+  }
+  function shadeColor(color, percent) {
+    const num = parseInt(color.replace('#',''), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = Math.min(255, Math.max(0, (num >> 16) + amt));
+    const G = Math.min(255, Math.max(0, (num >> 8 & 0x00FF) + amt));
+    const B = Math.min(255, Math.max(0, (num & 0x0000FF) + amt));
+    return '#' + (0x1000000 + R*0x10000 + G*0x100 + B).toString(16).slice(1);
+  }
+})();
+</script>
+
+<!-- Netlify Identity Widget — handles login redirects for CMS -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<!-- EmailJS — sends form to davan@aveshe.com without a server -->
+<!-- SETUP (one-time, free):
+  1. Go to https://www.emailjs.com and create a free account
+  2. Add an Email Service (Gmail / Outlook) → note your SERVICE ID
+  3. Create an Email Template with these variables:
+       {{from_name}}, {{from_company}}, {{from_email}}, {{from_phone}}, {{message}}
+     Set "To Email" in the template to: davan@aveshe.com
+     Note your TEMPLATE ID
+  4. Go to Account > API Keys → copy your PUBLIC KEY
+  5. Replace the three placeholder values below with your real IDs -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ── REPLACE THESE THREE VALUES ──────────────────────────────────
+  const EMAILJS_PUBLIC_KEY  = 'xCfPXYCm9L6Vkg7J1';   // e.g. 'abc123XYZ'
+  const EMAILJS_SERVICE_ID  = 'service_swp5bum';   // e.g. 'service_aveshe'
+  const EMAILJS_TEMPLATE_ID = 'template_ctuo6ae';  // e.g. 'template_enquiry'
+  // ────────────────────────────────────────────────────────────────
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  function sendEnquiry() {
+    const name    = document.getElementById('f-name').value.trim();
+    const company = document.getElementById('f-company').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const phone   = document.getElementById('f-phone').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    const status  = document.getElementById('form-status');
+    const btn     = document.getElementById('enquiryBtn');
+
+    // Basic validation
+    if (!name || !email || !message) {
+      status.style.display = 'block';
+      status.style.color   = '#c0392b';
+      status.textContent   = 'Please fill in your name, email and project details.';
+      return;
+    }
+
+    btn.disabled    = true;
+    btn.textContent = 'Sending…';
+    status.style.display = 'none';
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name:    name,
+      from_company: company || '—',
+      from_email:   email,
+      from_phone:   phone  || '—',
+      message:      message,
+    })
+    .then(() => {
+      status.style.display = 'block';
+      status.style.color   = '#27ae60';
+      status.textContent   = '✓ Message sent! We\'ll be in touch shortly.';
+      btn.textContent      = 'Sent ✓';
+      // Clear fields
+      ['f-name','f-company','f-email','f-phone','f-message'].forEach(id => {
+        const el = document.getElementById(id);
+        el.value = '';
+      });
+    })
+    .catch((err) => {
+      status.style.display = 'block';
+      status.style.color   = '#c0392b';
+      status.textContent   = 'Error: ' + (err.text || err.message || JSON.stringify(err)) + ' — Please email davan@aveshe.com directly.';
+      btn.disabled    = false;
+      btn.textContent = 'Send Enquiry ↗';
+      console.error('EmailJS error:', err);
+    });
+  }
+</script>

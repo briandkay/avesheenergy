@@ -1,0 +1,27 @@
+{
+  "heading_1": "Local insight.",
+  "heading_2": "Global capability.",
+  "description": "We combine in-country expertise with international supply chain strength to deliver value, reliability and compliance across Namibia's energy sector.",
+  "pillars": [
+    {
+      "icon": "📍",
+      "title": "Local Expertise",
+      "description": "On-the-ground teams with deep knowledge of Namibia's energy landscape and regulatory requirements."
+    },
+    {
+      "icon": "🌐",
+      "title": "Global Network",
+      "description": "Access to quality suppliers and OEMs from around the world, ensuring the best solutions."
+    },
+    {
+      "icon": "🛡",
+      "title": "Safety & Quality",
+      "description": "Committed to the highest safety, quality and environmental standards across all operations."
+    },
+    {
+      "icon": "⏱",
+      "title": "Responsive Service",
+      "description": "Agile, reliable and ready 24/7 to support your operations and meet critical deadlines."
+    }
+  ]
+}
